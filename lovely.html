@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Consultoria de Relógios</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <div class="principal">
+    <div class="logo">Relógios</div>
+    <h1>Descubra o que você procura</h1>
+    <img src="images/man-wearing-a-watch.jpg" id="imagemprincipal">
+  </div>
+
+  <div class="menu">
+    <a href="cronografo.html" class="quadradinho">Cronógrafo</a>
+    <a href="esportivo.html" class="quadradinho">Esportivo</a>
+    <a href="dresswatch.html" class="quadradinho">Dresswatch</a>
+    <a href="flieger.html" class="quadradinho">Flieger</a>
+    <a href="mergulho.html" class="quadradinho">Mergulho</a>
+    <a href="Referencias.html" class="quadradinho">Referências</a>
+  </div>
+
+  <script>
+
+  const links = document.querySelectorAll('.quadradinho');
+
+  links.forEach(link => {
+  link.addEventListener('click', function(e) {
+  e.preventDefault(); // impede a navegação imediata
+
+  const audio = new Audio('sounds/clique.mp3');
+  audio.play();
+
+  // Depois que o som terminar vai para a página
+  audio.onended = () => {
+  window.location.href = link.href;
+  // o Áudio usado foi retirado do site pixbay sound effects, podemos fazer o download de forma gratuita.
+  };
+  });
+  });
+</script>
+</body>
+</html>
